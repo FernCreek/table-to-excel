@@ -8,7 +8,7 @@ const TTEParser = (function() {
    */
   methods.parseDomToTable = function(ws, table, opts) {
     let _r, _c, cs, rs, r, c;
-    let rows = [...table.getElementsByTagName("tr")];
+    let rows = table.rows;
     let widths = table.getAttribute("data-cols-width");
     if (widths)
       widths = widths.split(",").map(function(item) {
@@ -116,6 +116,10 @@ const TTEParser = (function() {
         .trim()
         .replace(/\s+/g, " ")
         .replace(/<\s*[bB][rR]\s*\/?>/g, "\n")
+        .replace(/<\/\s*[p]\s*\>/g, "\n")
+        .replace(/<\/\s*[tT][rR]\s*\>/g, "\n")
+        .replace(/<\/\s*[tT][dD]\s*\>/g, " | ")
+        .replace(/<\s*[tT][rR][\s\S]*?\>/g, "| ")
         .replace(/<[^>]*>/g, "");
       for (let i = 0; i < entities.length; ++i)
         o = o.replace(entities[i][0], entities[i][1]);
