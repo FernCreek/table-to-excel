@@ -41,9 +41,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "exceljs": "^1.10.0",
-    "file-saver": "^2.0.1",
-    "jszip": "^3.2.1"
+    "exceljs": "^4.4.0",
+    "file-saver": "^2.0.1"
   },
   "babel": {
     "presets": [
