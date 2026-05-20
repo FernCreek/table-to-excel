@@ -20,8 +20,8 @@ export function getTable(filename) {
     let htmlString = fs.readFileSync(path, "utf8");
     let document = new window.DOMParser().parseFromString(
       htmlString,
-      "text/xml"
+      "text/html"
     );
-    return document.firstChild;
+    return document.querySelector("table");
   }
 }
