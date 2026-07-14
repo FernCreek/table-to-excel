@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "exceljs": "^4.4.0",
+    "exceljs": "4.4.0-alm.1",
     "file-saver": "^2.0.1"
   },
   "babel": {
